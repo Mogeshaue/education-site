@@ -265,22 +265,20 @@ contactForm.addEventListener('submit', async (e) => {
         // Reset form
         contactForm.reset();
 
-        // TODO: INTEGRATE EMAIL SERVICE HERE
-        // Example for FormSpree:
-        // const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-        //     method: 'POST',
-        //     body: formData,
-        //     headers: {
-        //         'Accept': 'application/json'
-        //     }
-        // });
-        //
-        // if (response.ok) {
-        //     showMessage('Thank you for your inquiry! We will contact you soon.', 'success');
-        //     contactForm.reset();
-        // } else {
-        //     throw new Error('Form submission failed');
-        // }
+        const response = await fetch('https://formspree.io/f/maqwlyow', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            showMessage('Thank you for your inquiry! We will contact you soon.', 'success');
+            contactForm.reset();
+        } else {
+            throw new Error('Form submission failed');
+        }
 
     } catch (error) {
         console.error('Form submission error:', error);
