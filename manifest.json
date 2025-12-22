@@ -1,0 +1,24 @@
+{
+  "name": "RAM Tuition Centre",
+  "short_name": "RAM Tuition",
+  "description": "Premier tuition center offering expert coaching for Classes 6-12 with 95% success rate",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#add8e6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
