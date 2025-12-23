@@ -129,18 +129,26 @@ const statNumbers = document.querySelectorAll('.stat-number');
 const animateCounter = (element) => {
     const target = parseInt(element.getAttribute('data-target'));
     const duration = 2000; // 2 seconds
-    const step = target / (duration / 16); // 60fps
-    let current = 0;
+    const startTime = performance.now();
 
-    const timer = setInterval(() => {
-        current += step;
-        if (current >= target) {
-            element.textContent = target;
-            clearInterval(timer);
+    const updateCounter = (currentTime) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        // Ease-out cubic function for smooth deceleration
+        const easeProgress = 1 - Math.pow(1 - progress, 3);
+
+        const current = Math.floor(easeProgress * target);
+        element.textContent = current;
+
+        if (progress < 1) {
+            requestAnimationFrame(updateCounter);
         } else {
-            element.textContent = Math.floor(current);
+            element.textContent = target;
         }
-    }, 16);
+    };
+
+    requestAnimationFrame(updateCounter);
 };
 
 // Observe stats section for counter animation
@@ -153,7 +161,7 @@ const statsObserver = new IntersectionObserver((entries) => {
             statsObserver.unobserve(entry.target);
         }
     });
-}, { threshold: 0.5 });
+}, { threshold: 0.15 });
 
 const achievementsSection = document.querySelector('.achievements');
 if (achievementsSection) {
