@@ -243,42 +243,24 @@ contactForm.addEventListener('submit', async (e) => {
     submitBtn.disabled = true;
 
     try {
-        // PLACEHOLDER FOR EMAIL SERVICE INTEGRATION
-        // TODO: Replace with actual email service (FormSpree, EmailJS, etc.)
+        // Send email using EmailJS
+        // NOTE: You must replace these placeholders with your actual EmailJS values:
+        // 1. Service ID: Create a service (e.g., Gmail) in EmailJS
+        // 2. Template ID: Create an email template in EmailJS
+        // 3. Public Key: Set this in index.html (emailjs.init)
+        const serviceID = 'service_b1k9x1s';
+        const templateID = 'template_ove6v9i';
 
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        // emailjs.sendForm automatically captures all form fields with 'name' attributes
+        await emailjs.sendForm(serviceID, templateID, contactForm);
 
-        // For now, just log the form data
-        console.log('Form submitted with data:', {
-            name: formData.get('name'),
-            email: formData.get('email'),
-            phone: formData.get('phone'),
-            grade: formData.get('grade'),
-            subject: formData.get('subject'),
-            message: formData.get('message')
-        });
+        console.log('Email sent successfully!');
 
         // Show success message
         showMessage('Thank you for your inquiry! We will contact you soon.', 'success');
 
         // Reset form
         contactForm.reset();
-
-        const response = await fetch('https://formspree.io/f/maqwlyow', {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
-        });
-
-        if (response.ok) {
-            showMessage('Thank you for your inquiry! We will contact you soon.', 'success');
-            contactForm.reset();
-        } else {
-            throw new Error('Form submission failed');
-        }
 
     } catch (error) {
         console.error('Form submission error:', error);
