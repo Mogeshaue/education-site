@@ -2,24 +2,38 @@
    CSS VARIABLES & DESIGN SYSTEM
    =================================== */
 :root {
-    /* Colors - Education Theme (Light Blue) */
-    --primary-color: #4f46e5;
-    --primary-dark: #4338ca;
-    --primary-darker: #312e81;
-    --accent-color: #06b6d4;
-    --bg-light: #f5f3ff;
-    --bg-white: #ffffff;
-    --text-dark: #0f172a;
-    --text-gray: #475569;
-    --text-light: #64748b;
+    /* Colors - Royal Sapphire & Gold Theme */
+    --primary-color: #4361EE;
+    /* Vivid Royal Blue */
+    --primary-dark: #3F37C9;
+    /* Deep Indigo */
+    --primary-darker: #13115C;
+    /* Midnight Navy */
+    --accent-color: #FFD700;
+    /* Pure Luxury Gold */
+    --accent-secondary: #4CC9F0;
+    /* Electric Cyan for tech highlights */
+
+    /* Backgrounds */
+    --bg-dark: #02040F;
+    /* Almost Void Black */
+    --bg-glass: rgba(10, 20, 40, 0.75);
+    /* Darker glass for contrast */
+
+    /* Text */
+    --text-white: #FFFFFF;
+    --text-gray: #BDE0FE;
+    /* Ice Blue Gray */
+    --text-dark: #000000;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
-    --gradient-overlay: linear-gradient(135deg, rgba(173, 216, 230, 0.9), rgba(74, 144, 226, 0.9));
-    --gradient-card: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(173, 216, 230, 0.1));
+    --gradient-primary: linear-gradient(135deg, #4361EE 0%, #3F37C9 100%);
+    --gradient-gold: linear-gradient(135deg, #FFD700 0%, #F77F00 100%);
+    --gradient-glass: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.01));
+    --gradient-glow: radial-gradient(circle at center, rgba(67, 97, 238, 0.25), transparent 70%);
 
     /* Typography */
-    --font-heading: 'Poppins', sans-serif;
+    --font-heading: 'Outfit', 'Poppins', sans-serif;
     --font-body: 'Inter', sans-serif;
 
     /* Spacing */
@@ -27,24 +41,25 @@
     --spacing-sm: 1rem;
     --spacing-md: 2rem;
     --spacing-lg: 3rem;
-    --spacing-xl: 4rem;
+    --spacing-xl: 5rem;
 
     /* Border Radius */
     --radius-sm: 8px;
-    --radius-md: 12px;
-    --radius-lg: 16px;
-    --radius-xl: 24px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-xl: 40px;
 
-    /* Shadows */
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
-    --shadow-hover: 0 12px 48px rgba(74, 144, 226, 0.2);
+    /* Shadows & Glows */
+    --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+    /* Stronger shadow */
+    --glow-text: 0 0 15px rgba(67, 97, 238, 0.6);
+    --glow-text-gold: 0 0 15px rgba(255, 215, 0, 0.5);
+    --glow-box: 0 0 30px rgba(67, 97, 238, 0.2);
 
     /* Transitions */
-    --transition-fast: 0.2s ease;
-    --transition-normal: 0.3s ease;
-    --transition-slow: 0.5s ease;
+    --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ===================================
@@ -63,17 +78,18 @@ html {
 
 body {
     font-family: var(--font-body);
-    color: var(--text-dark);
-    background-color: var(--bg-light);
+    color: var(--text-white);
+    background-color: var(--bg-dark);
+    /* Base color */
+    background-image:
+        linear-gradient(rgba(2, 4, 15, 0.5), rgba(2, 4, 15, 0.8)),
+        /* Dark overlay for readability */
+        url('../images/background-main.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     line-height: 1.6;
     overflow-x: hidden;
-    /* Mesh Gradient Background for Glass Effect */
-    background-image:
-        radial-gradient(at 0% 0%, rgba(79, 70, 229, 0.15) 0px, transparent 50%),
-        radial-gradient(at 100% 0%, rgba(6, 182, 212, 0.15) 0px, transparent 50%),
-        radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.15) 0px, transparent 50%),
-        radial-gradient(at 0% 100%, rgba(79, 70, 229, 0.1) 0px, transparent 50%);
-    background-attachment: fixed;
 }
 
 /* Skip Link for Accessibility */
@@ -129,7 +145,7 @@ button {
     font-family: var(--font-heading);
     font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 700;
-    color: var(--text-dark);
+    color: var(--text-white);
     text-align: center;
     margin-bottom: 1rem;
     position: relative;
@@ -156,164 +172,120 @@ button {
     margin-right: auto;
 }
 
-/* Button Styles */
+/* Button Styles - Geometric Pill */
 .btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
     padding: 1rem 2.5rem;
     font-size: 1rem;
     font-weight: 600;
     font-family: var(--font-heading);
-    border-radius: var(--radius-lg);
+    border-radius: 50px;
+    /* Full pill shape */
     transition: all var(--transition-normal);
-    position: relative;
-    overflow: hidden;
-    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .btn-primary {
-    background: var(--gradient-accent);
-    color: var(--bg-white);
-    box-shadow: 0 4px 20px rgba(249, 115, 22, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    position: relative;
-    overflow: hidden;
-}
-
-.btn-primary::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: left 0.5s ease;
-}
-
-.btn-primary:hover::before {
-    left: 100%;
+    background: var(--gradient-primary);
+    color: #fff;
+    border: none;
+    box-shadow: 0 10px 30px rgba(67, 97, 238, 0.4);
 }
 
 .btn-primary:hover {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 8px 30px rgba(249, 115, 22, 0.5);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(67, 97, 238, 0.6);
+    filter: brightness(1.2);
 }
 
-.btn-primary:active {
-    transform: translateY(-1px);
-}
-
-/* Secondary button */
 .btn-secondary {
-    background: var(--accent-color);
-    color: var(--bg-white);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 20px rgba(6, 182, 212, 0.4);
-    position: relative;
-    overflow: hidden;
-}
-
-.btn-secondary::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: left 0.5s ease;
-}
-
-.btn-secondary:hover::before {
-    left: 100%;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .btn-secondary:hover {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 8px 30px rgba(6, 182, 212, 0.5);
-}
-
-.btn-secondary:active {
-    transform: translateY(-1px);
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+    border-color: #fff;
 }
 
 /* ===================================
    NAVIGATION BAR - LIQUID GLASS DESIGN
    =================================== */
+/* ===================================
+   NAVIGATION BAR - EXTRUDED GLASS PRISM
+   =================================== */
 .navbar {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: transparent;
-    padding: 1rem 0;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1200px;
     z-index: 1000;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.navbar.scrolled {
-    background: rgba(255, 255, 255, 0.65);
-    /* More transparent */
-    backdrop-filter: blur(20px) saturate(200%);
-    /* Stronger blur and saturation */
-    -webkit-backdrop-filter: blur(20px) saturate(200%);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
-    /* Softer, spread out shadow */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-    padding: 0.8rem 0;
+    border-radius: 100px;
+    /* Pill Shape */
+    padding: 0;
 }
 
 .nav-container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow:
+        0 4px 30px rgba(0, 0, 0, 0.1),
+        inset 0 0 20px rgba(255, 255, 255, 0.05);
+    /* Inner light */
+    border-radius: 100px;
+    padding: 0.8rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.navbar.scrolled .nav-container {
+    background: rgba(10, 10, 30, 0.7);
+    border-color: rgba(0, 255, 255, 0.3);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
 }
 
 .logo {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    padding: 0.6rem 1.2rem;
-    border-radius: 50px;
-    /* Pill shape for modern look */
-    background: rgba(255, 255, 255, 0.8);
-    /* High contrast background */
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    /* Subtle lift */
-    transition: all 0.3s ease;
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
 }
 
 .logo:hover {
-    transform: scale(1.02);
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transform: none;
+    background: transparent;
+    box-shadow: none;
 }
 
 .logo img {
-    height: 55px;
+    height: 40px;
     width: auto;
-    transition: var(--transition-normal);
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
 }
 
-.navbar.scrolled .logo img {
-    height: 45px;
-}
-
-/* Darker Text for Contrast in Logo */
 .logo-text {
     font-family: var(--font-heading);
-    font-size: 1.4rem;
-    font-weight: 800;
-    /* Bolder */
-    color: #0f172a;
-    /* Dark Slate - High Contrast always */
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-white);
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-right: 5px;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
 }
 
 .nav-menu {
@@ -401,58 +373,63 @@ button {
 /* ===================================
    HERO SECTION
    =================================== */
+/* ===================================
+   HERO SECTION - SPATIAL 3D
+   =================================== */
 .hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    /* Align Left */
     position: relative;
-    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
+    background: transparent;
+    /* See through to WebGL */
     overflow: hidden;
+    padding-left: 10%;
 }
 
 .hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=1600') center/cover;
-    opacity: 0.15;
-    z-index: 1;
+    display: none;
+    /* Remove background image */
 }
 
 .hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--gradient-overlay);
-    z-index: 2;
+    background: radial-gradient(circle at top left, rgba(0, 255, 255, 0.05), transparent 60%);
+    pointer-events: none;
 }
 
 .hero-content {
     position: relative;
-    z-index: 3;
-    text-align: center;
-    color: var(--bg-white);
-    padding: 2rem;
+    z-index: 10;
+    text-align: left;
+    max-width: 600px;
 }
 
 .hero-title {
     font-family: var(--font-heading);
-    font-size: clamp(2.5rem, 8vw, 5rem);
-    font-weight: 700;
-    margin-bottom: 1rem;
-    text-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    font-size: clamp(3rem, 5vw, 6rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    background: linear-gradient(to bottom right, #fff, #aaa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.3));
+    transform: translateZ(50px);
+    /* Move text "closer" */
 }
 
 .hero-subtitle {
-    font-size: clamp(1.2rem, 3vw, 1.8rem);
-    margin-bottom: 2rem;
-    opacity: 0.95;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+    font-family: 'Courier New', monospace;
+    /* Tech feel */
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 .animate-fade-in {
@@ -588,7 +565,7 @@ button {
     font-family: var(--font-heading);
     font-size: 1.4rem;
     margin-bottom: 0.75rem;
-    color: var(--text-dark);
+    color: var(--text-white);
 }
 
 
@@ -637,30 +614,31 @@ button {
     margin-bottom: 3rem;
 }
 
+/* Board Badges - Dark Glass Pills */
 .board-badge {
-    background: rgba(30, 58, 138, 0.08);
-    color: var(--primary-darker);
-    padding: 0.8rem 2rem;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(8px);
+    color: var(--text-white);
+    padding: 0.8rem 2.5rem;
     border-radius: 50px;
     font-weight: 600;
-    font-size: 1.1rem;
-    border: 1px solid rgba(30, 58, 138, 0.1);
+    font-size: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
     transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .board-badge:hover {
     background: var(--primary-color);
+    border-color: var(--primary-color);
     color: white;
-    transform: scale(1.05);
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(67, 97, 238, 0.5);
 }
 
-.grade-number {
-    font-size: 3rem;
-    font-weight: 800;
-    color: white;
-    font-family: var(--font-heading);
-    line-height: 1;
-}
+
 
 .course-icon {
     display: flex;
@@ -693,45 +671,99 @@ button {
     overflow: hidden;
 }
 
+/* Course Cards - Reference Style */
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    padding: 1rem;
+}
+
+.course-card {
+    background: rgba(10, 16, 31, 0.6);
+    /* Very dark glass */
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Subtle border */
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: left;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    /* Horizontal Layout */
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
 .course-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: var(--gradient-primary);
+    display: none;
+    /* Remove old top border */
 }
 
 .course-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: var(--shadow-hover);
+    transform: translateY(-10px);
+    border-color: var(--primary-color);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5),
+        inset 0 0 20px rgba(67, 97, 238, 0.1);
+    /* Inner glow */
 }
 
+/* Glowing Ring Icon */
 .course-icon {
     width: 80px;
     height: 80px;
-    margin: 0 auto 1.5rem;
-    background: linear-gradient(145deg, rgba(173, 216, 230, 0.2), rgba(74, 144, 226, 0.3));
     border-radius: 50%;
+    border: 2px solid rgba(67, 97, 238, 0.3);
+    /* Dim blue ring */
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2.5rem;
-    color: var(--primary-dark);
-    transition: var(--transition-normal);
+    margin: 0;
+    /* No auto margin */
+    flex-shrink: 0;
+    /* Prevent shrinking */
+    background: transparent;
+    /* Remove old background */
+    position: relative;
+    box-shadow: 0 0 15px rgba(67, 97, 238, 0.1);
+    transition: all 0.4s ease;
+    font-size: 1rem;
+    /* Reset base size */
 }
 
 .course-card:hover .course-icon {
-    transform: rotate(360deg) scale(1.1);
+    border-color: var(--accent-secondary);
+    /* Electric Cyan */
+    box-shadow: 0 0 30px rgba(76, 201, 240, 0.4);
+    transform: scale(1.1);
+}
+
+/* Grade Number Stying */
+.grade-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-white);
+    font-family: var(--font-heading);
+    z-index: 2;
 }
 
 .course-card h3 {
     font-family: var(--font-heading);
-    font-size: 1.6rem;
-    margin-bottom: 0.75rem;
-    text-align: center;
-    color: var(--text-dark);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-white);
+    font-weight: 600;
+}
+
+.course-info {
+    display: flex;
+    flex-direction: column;
 }
 
 /* Toppers Slider */
@@ -749,7 +781,7 @@ button {
     font-family: var(--font-heading);
     font-size: 2rem;
     margin-bottom: 2rem;
-    color: var(--text-dark);
+    color: var(--text-white);
 }
 
 .toppers-track {
@@ -785,6 +817,7 @@ button {
 
 .topper-card h4 {
     color: var(--text-dark);
+    /* Keep dark for white cards if they are white? No, topper cards are white bg? Let's check context. */
     margin-bottom: 0.5rem;
 }
 
@@ -799,13 +832,227 @@ button {
     font-size: 0.9rem;
 }
 
+/* ===================================
+   SPATIAL UI COMPONENTS
+   =================================== */
+
+/* Trust Metrics - Glass Blocks */
+.achievements .stats-grid {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    perspective: 1000px;
+    margin-top: -5rem;
+    /* Overlap with hero slightly */
+    position: relative;
+    z-index: 20;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.5),
+        inset 0 0 20px rgba(0, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    width: 250px;
+    transform-style: preserve-3d;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    border-bottom: 4px solid var(--primary-color);
+}
+
+.stat-card:hover {
+    transform: translateY(-20px) rotateX(10deg);
+    box-shadow:
+        0 20px 50px rgba(0, 255, 255, 0.2),
+        inset 0 0 30px rgba(0, 255, 255, 0.1);
+    border-color: rgba(0, 255, 255, 0.5);
+}
+
+.stat-number {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--text-white);
+    text-shadow: 0 0 15px var(--primary-color);
+}
+
+.stat-label {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Isometric Courses */
+.courses {
+    background: transparent;
+    perspective: 2000px;
+}
+
+.courses-grid {
+    transform-style: preserve-3d;
+    transform: rotateX(20deg) rotateY(0deg);
+    /* Isometric view base */
+    gap: 3rem;
+    padding: 4rem 0;
+}
+
+.course-card {
+    background: rgba(20, 20, 40, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transform-style: preserve-3d;
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    /* Bouncy */
+    box-shadow:
+        10px 10px 30px rgba(0, 0, 0, 0.5),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.course-card::before {
+    display: none;
+    /* Remove old gradient line */
+}
+
+/* The "Thickness" of the card */
+.course-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateZ(-20px);
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: var(--radius-lg);
+    z-index: -1;
+    transition: transform 0.6s;
+    opacity: 0;
+}
+
+.course-card:hover {
+    transform: translateZ(50px) rotateX(-10deg) rotateY(-10deg);
+    background: rgba(30, 30, 60, 0.8);
+    border-color: var(--primary-color);
+    box-shadow:
+        20px 20px 60px rgba(0, 0, 0, 0.6),
+        0 0 30px rgba(0, 255, 255, 0.2);
+}
+
+.course-card:hover::after {
+    transform: translateZ(-40px);
+    opacity: 1;
+}
+
+.course-card h3 {
+    color: var(--text-white);
+    transform: translateZ(20px);
+}
+
+.course-card p {
+    color: var(--text-gray);
+    transform: translateZ(10px);
+}
+
+.course-icon {
+    background: rgba(0, 255, 255, 0.1);
+    color: var(--primary-color);
+    transform: translateZ(30px);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+/* Gallery Lightboxes */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gallery-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right,
+            transparent,
+            rgba(255, 255, 255, 0.2),
+            transparent);
+    transform: skewX(-25deg);
+    transition: left 0.75s;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.gallery-item:hover::before {
+    left: 150%;
+}
+
+.gallery-overlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+}
+
+
+
+
+/* Museum Display Case - Director */
+.director-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.5),
+        inset 0 0 0 2px rgba(255, 255, 255, 0.05);
+    /* Inner rim */
+    padding: 3rem;
+    position: relative;
+    border-radius: 4px;
+    /* More boxy like a case */
+}
+
+.director-card::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    z-index: -1;
+}
+
+.director-image-wrapper {
+    position: relative;
+    border: 10px solid rgba(255, 255, 255, 0.05);
+    /* Thick acrylic frame */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.director-image-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, transparent 50%);
+    pointer-events: none;
+}
 
 /* ===================================
    ACHIEVEMENTS SECTION
    =================================== */
 .achievements {
     padding: var(--spacing-xl) 0;
-    background: var(--bg-white);
+    position: relative;
+    background: transparent;
+    /* Remove white background */
 }
 
 .stats-grid {
@@ -816,42 +1063,50 @@ button {
 }
 
 .stat-card {
-    background: var(--gradient-card);
+    background: rgba(10, 16, 31, 0.6);
+    /* Dark Glass */
     padding: 3rem 2rem;
-    border-radius: var(--radius-lg);
+    border-radius: 20px;
     text-align: center;
-    box-shadow: var(--shadow-md);
-    transition: all var(--transition-normal);
-    border: 2px solid rgba(173, 216, 230, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
 }
 
 .stat-card:hover {
     transform: translateY(-10px);
-    box-shadow: var(--shadow-hover);
-    border-color: var(--primary-dark);
+    box-shadow: 0 15px 50px rgba(67, 97, 238, 0.2);
+    border-color: var(--primary-color);
 }
 
 .stat-icon {
     font-size: 3rem;
-    color: var(--primary-dark);
-    margin-bottom: 1rem;
+    color: var(--accent-secondary);
+    /* Electric Cyan */
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 20px rgba(76, 201, 240, 0.5);
 }
 
 .stat-number {
     font-family: var(--font-heading);
-    font-size: 3.5rem;
-    font-weight: 700;
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--text-white);
+    background: none;
+    -webkit-text-fill-color: initial;
     margin-bottom: 0.5rem;
+    text-shadow: 0 0 30px rgba(67, 97, 238, 0.6);
+    /* Royal Blue Glow */
 }
 
 .stat-label {
     color: var(--text-gray);
     font-size: 1.1rem;
-    font-weight: 500;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .achievement-highlights h3 {
@@ -1657,4 +1912,209 @@ button {
     overflow: hidden;
     box-shadow: var(--shadow-md);
     border: 4px solid white;
+}
+
+/* ===================================
+   DIRECTOR HERO / PERSONAL BRAND SECTION
+   =================================== */
+.director-hero-section {
+    padding: var(--spacing-xl) 0;
+    position: relative;
+    overflow: visible;
+    /* Allow badges to float */
+}
+
+.director-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+/* Typography & Text */
+.hero-brand-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -1px;
+}
+
+.director-story {
+    font-size: 1.1rem;
+    color: var(--text-gray);
+    line-height: 1.8;
+}
+
+.story-lead {
+    font-size: 1.25rem;
+    color: var(--text-white);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.text-highlight {
+    color: var(--primary-color);
+    /* Royal Blue */
+    font-weight: 700;
+}
+
+.quote-block {
+    margin: 2rem 0;
+    padding-left: 1.5rem;
+    border-left: 4px solid var(--accent-color);
+    /* Gold border */
+    font-style: italic;
+    color: var(--text-white);
+    font-size: 1.15rem;
+    background: linear-gradient(90deg, rgba(255, 215, 0, 0.05), transparent);
+    padding: 1rem 1.5rem;
+    border-radius: 0 12px 12px 0;
+}
+
+/* Visuals & Badges */
+.director-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.director-img-container {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    border-radius: 24px;
+}
+
+.director-hero-img {
+    width: 100%;
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    filter: contrast(1.1) saturate(1.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+/* Glow Backdrop */
+.img-glow-backdrop {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(67, 97, 238, 0.3) 0%, transparent 70%);
+    z-index: 0;
+    filter: blur(40px);
+}
+
+/* Floating Badges */
+.floating-badge {
+    position: absolute;
+    background: rgba(15, 23, 42, 0.85);
+    /* Dark Glass */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0.8rem 1.2rem;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    animation: floatBadge 6s ease-in-out infinite;
+    max-width: 200px;
+}
+
+.badge-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.badge-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.badge-text strong {
+    color: var(--text-white);
+    font-size: 1.1rem;
+}
+
+.badge-text span {
+    font-size: 0.8rem;
+    color: var(--text-gray);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* Badge Positions */
+.badge-exp {
+    top: 10%;
+    right: -30px;
+    animation-delay: 0s;
+}
+
+.badge-alumni {
+    bottom: 15%;
+    left: -40px;
+    animation-delay: 2s;
+}
+
+/* Keyframes */
+@keyframes floatBadge {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .director-layout {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .hero-brand-title {
+        font-size: 2.5rem;
+    }
+
+    .quote-block {
+        text-align: left;
+    }
+
+    .director-visual {
+        margin-top: 2rem;
+    }
+
+    .badge-exp {
+        right: 0;
+        top: 5%;
+    }
+
+    .badge-alumni {
+        left: 0;
+        bottom: 5%;
+    }
 }

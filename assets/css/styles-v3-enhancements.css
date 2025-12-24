@@ -1,0 +1,491 @@
+/* ===================================
+   V3 PREMIUM ENHANCEMENTS
+   Additional styles for premium glassmorphism UI
+   =================================== */
+
+/* Enhanced Course Cards with Soft 3D */
+.courses {
+    padding: var(--spacing-xl) 0;
+    background: linear-gradient(180deg, var(--bg-white) 0%, var(--bg-light) 100%);
+    position: relative;
+}
+
+.courses::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 50%, rgba(79, 70, 229, 0.03), transparent 60%);
+    pointer-events: none;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2.5rem;
+    perspective: 1000px;
+}
+
+.course-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    padding: 3rem 2.5rem;
+    border-radius: var(--radius-xl);
+    box-shadow: 0 15px 50px rgba(79, 70, 229, 0.1),
+                0 6px 20px rgba(0, 0, 0, 0.05),
+                inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: visible;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    transform-style: preserve-3d;
+}
+
+.course-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #4f46e5, #06b6d4, #4f46e5);
+    background-size: 200% 100%;
+    animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.course-card:hover {
+    transform: translateY(-15px) rotateX(5deg) scale(1.02);
+    box-shadow: 0 30px 70px rgba(79, 70, 229, 0.2),
+                0 12px 30px rgba(6, 182, 212, 0.15);
+    border-color: rgba(79, 70, 229, 0.3);
+}
+
+.course-icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 2rem;
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.12), rgba(6, 182, 212, 0.12));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    position: relative;
+    transition: all var(--transition-normal);
+    box-shadow: 0 10px 30px rgba(79, 70, 229, 0.15),
+                inset 0 2px 0 rgba(255, 255, 255, 0.5);
+}
+
+.course-icon::before {
+    content: '';
+    position: absolute;
+    inset: -5px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4f46e5, #06b6d4);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+    z-index: -1;
+    filter: blur(15px);
+}
+
+.course-card:hover .course-icon {
+    transform: rotate(360deg) scale(1.15);
+}
+
+.course-card:hover .course-icon::before {
+    opacity: 0.4;
+}
+
+.grade-number {
+    font-size: 3.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #4f46e5, #06b6d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: var(--font-heading);
+    text-shadow: 0 4px 10px rgba(79, 70, 229, 0.2);
+}
+
+/* Board Badges - Premium Glass Pills */
+.boards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.board-badge {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    color: var(--primary-darker);
+    padding: 1rem 2.5rem;
+    border-radius: 60px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: 2px solid rgba(79, 70, 229, 0.2);
+    transition: all var(--transition-normal);
+    box-shadow: 0 4px 20px rgba(79, 70, 229, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.board-badge:hover {
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.95), rgba(6, 182, 212, 0.95));
+    color: white;
+    transform: translateY(-3px) scale(1.05);
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 12px 40px rgba(79, 70, 229, 0.3);
+}
+
+/* Enhanced Toppers Section */
+.toppers-section {
+    margin-top: 5rem;
+    padding: 3rem;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border-radius: var(--radius-2xl);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 20px 60px rgba(79, 70, 229, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.toppers-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.08), transparent 50%);
+    pointer-events: none;
+}
+
+.topper-card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 8px 32px rgba(79, 70, 229, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    text-align: center;
+    min-width: 250px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    transition: all var(--transition-normal);
+}
+
+.topper-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 50px rgba(79, 70, 229, 0.18);
+}
+
+.topper-img-placeholder {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.08), rgba(6, 182, 212, 0.08));
+    margin: 0 auto 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    background: linear-gradient(135deg, #4f46e5, #06b6d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border: 3px solid rgba(79, 70, 229, 0.15);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.15);
+}
+
+/* Enhanced Achievement Stats with Glass Counters */
+.achievements {
+    padding: var(--spacing-xl) 0;
+    background: linear-gradient(180deg, var(--bg-light) 0%, var(--bg-white) 50%, var(--bg-light) 100%);
+    position: relative;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    padding: 3.5rem 2.5rem;
+    border-radius: var(--radius-xl);
+    text-align: center;
+    box-shadow: 0 15px 50px rgba(79, 70, 229, 0.12),
+                0 6px 20px rgba(0, 0, 0, 0.05),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    transition: all var(--transition-normal);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(79, 70, 229, 0.05), transparent 70%);
+    transform: scale(0);
+    transition: transform var(--transition-slow);
+}
+
+.stat-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 25px 70px rgba(79, 70, 229, 0.2),
+                0 10px 30px rgba(6, 182, 212, 0.12);
+    border-color: rgba(79, 70, 229, 0.3);
+}
+
+.stat-card:hover::before {
+    transform: scale(1);
+}
+
+.stat-icon {
+    font-size: 3.5rem;
+    background: linear-gradient(135deg, #4f46e5, #06b6d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.2rem;
+    filter: drop-shadow(0 4px 10px rgba(79, 70, 229, 0.2));
+}
+
+.stat-number {
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #4f46e5, #06b6d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 8px 20px rgba(79, 70, 229, 0.15);
+}
+
+/* Gallery - Premium Glass Frames */
+.gallery {
+    padding: var(--spacing-xl) 0;
+    background: linear-gradient(180deg, var(--bg-white) 0%, var(--bg-light) 100%);
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: 0 15px 50px rgba(79, 70, 229, 0.1);
+    height: 320px;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+.gallery-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.05), rgba(6, 182, 212, 0.05));
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+    z-index: 1;
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 70px rgba(79, 70, 229, 0.2);
+    border-color: rgba(79, 70, 229, 0.3);
+}
+
+.gallery-item:hover::before {
+    opacity: 1;
+}
+
+/* Testimonials - Glass Quote Cards */
+.testimonial-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    padding: 3rem;
+    border-radius: var(--radius-xl);
+    box-shadow: 0 15px 50px rgba(79, 70, 229, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    position: relative;
+    transition: all var(--transition-normal);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px) rotate(1deg);
+    box-shadow: 0 25px 70px rgba(79, 70, 229, 0.18);
+}
+
+.quote-icon {
+    font-size: 3.5rem;
+    background: linear-gradient(135deg, #4f46e5, #06b6d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0.4;
+    margin-bottom: 1.5rem;
+}
+
+/* Contact Form - Premium Glass */
+.contact {
+    padding: var(--spacing-xl) 0;
+    background: linear-gradient(180deg, var(--bg-light) 0%, var(--bg-white) 100%);
+}
+
+.contact-form {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(30px) saturate(180%);
+    -webkit-backdrop-filter: blur(30px) saturate(180%);
+    padding: 3.5rem;
+    border-radius: var(--radius-2xl);
+    box-shadow: 0 20px 60px rgba(79, 70, 229, 0.12),
+                0 8px 24px rgba(0, 0, 0, 0.05),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 70% 30%, rgba(79, 70, 229, 0.03), transparent 60%);
+    pointer-events: none;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 1.1rem 1.5rem;
+    border: 2px solid rgba(79, 70, 229, 0.15);
+    border-radius: var(--radius-md);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: all var(--transition-normal);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1),
+                0 8px 24px rgba(79, 70, 229, 0.12);
+    background: rgba(255, 255, 255, 0.95);
+    transform: translateY(-2px);
+}
+
+/* Progress Bar Enhancement */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #4f46e5, #06b6d4, #4f46e5);
+    transform: scaleX(0);
+    transform-origin: left;
+    z-index: 9999;
+    box-shadow: 0 2px 10px rgba(79, 70, 229, 0.4);
+}
+
+/* Scroll to Top - Glass Button */
+.scroll-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 55px;
+    height: 55px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+    z-index: 999;
+    box-shadow: 0 8px 32px rgba(79, 70, 229, 0.15);
+}
+
+.scroll-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-top:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 15px 50px rgba(79, 70, 229, 0.25);
+}
+
+/* Advanced Micro-Interactions */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Add floating animation to icons */
+.feature-icon,
+.stat-icon {
+    animation: float 3s ease-in-out infinite;
+}
+
+.feature-card:nth-child(2) .feature-icon,
+.stat-card:nth-child(2) .stat-icon {
+    animation-delay: 0.5s;
+}
+
+.feature-card:nth-child(3) .feature-icon,
+.stat-card:nth-child(3) .stat-icon {
+    animation-delay: 1s;
+}
+
+/* Responsive Glass Effects */
+@media (max-width: 768px) {
+    .course-card,
+    .stat-card,
+    .testimonial-card,
+    .contact-form {
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+    }
+    
+    .course-card:hover {
+        transform: translateY(-8px);
+    }
+}

@@ -3,8 +3,7 @@
    =================================== */
 
 .toppers-showcase {
-    background: #ffffff;
-    /* Clean White Background */
+    background: transparent;
     padding: 5rem 0;
     position: relative;
     overflow: hidden;
@@ -29,23 +28,27 @@
     font-family: var(--font-heading);
     font-size: 3rem;
     font-weight: 800;
-    color: #1e3a8a;
-    /* Deep Blue */
+    color: var(--text-white);
+    text-shadow: 0 0 20px rgba(67, 97, 238, 0.5);
+    /* Glowing Text */
     margin: 0 0 0.5rem 0;
     line-height: 1.1;
 }
 
 .toppers-showcase-subtitle {
     font-size: 1.15rem;
-    color: #64748b;
-    /* Slate */
+    color: var(--accent-secondary);
+    /* Electric Cyan */
     margin-bottom: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .counter-badge {
-    background: #f1f5f9;
-    /* Very Light Grey/Blue */
-    color: #0284c7;
+    background: linear-gradient(135deg, rgba(67, 97, 238, 0.2), rgba(63, 55, 201, 0.2));
+    border: 1px solid rgba(67, 97, 238, 0.3);
+    color: var(--accent-color);
+    /* Gold */
     padding: 0.6rem 1.2rem;
     border-radius: 50px;
     display: flex;
@@ -53,6 +56,7 @@
     gap: 0.5rem;
     font-weight: 700;
     font-size: 0.9rem;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.1);
 }
 
 .count-number {
@@ -118,24 +122,25 @@
 }
 
 
-/* Minimalist Card */
+/* Minimalist Glass Card */
 .success-card {
-    background: #ffffff;
+    background: rgba(15, 23, 42, 0.6);
+    /* Dark Glass */
+    backdrop-filter: blur(10px);
     width: 320px;
-    /* Fixed width for smooth scroll */
     border-radius: 12px;
     padding: 1.5rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-    border: 1px solid #f1f5f9;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     flex-shrink: 0;
-    /* Prevent shrinking */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .success-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
-    border-color: #e2e8f0;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(67, 97, 238, 0.15);
+    border-color: var(--primary-color);
+    /* Royal Blue glow on hover */
 }
 
 .card-header {
@@ -169,44 +174,46 @@
 .card-name {
     font-size: 1.05rem;
     font-weight: 700;
-    color: #1e293b;
+    color: var(--text-white);
     margin: 0;
 }
 
 .card-role-highlight {
     font-size: 0.8rem;
-    color: #0284c7;
-    /* Brand Blue */
+    color: var(--primary-color);
     font-weight: 600;
     text-transform: uppercase;
+    text-shadow: 0 0 5px rgba(67, 97, 238, 0.5);
 }
 
 .card-score-box {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #f8fafc;
+    background: rgba(255, 255, 255, 0.05);
     padding: 0.6rem 1rem;
     border-radius: 8px;
     margin-bottom: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .score-badge {
     font-weight: 800;
-    color: #0f172a;
+    color: var(--accent-color);
+    /* Gold Score */
     font-size: 1rem;
 }
 
 .score-details {
     font-size: 0.8rem;
-    color: #64748b;
+    color: var(--text-gray);
     text-transform: uppercase;
     font-weight: 500;
 }
 
 .card-testimonial {
     font-size: 0.9rem;
-    color: #475569;
+    color: var(--text-gray);
     line-height: 1.5;
     margin: 0;
 }

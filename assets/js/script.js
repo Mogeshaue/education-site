@@ -292,7 +292,7 @@ galleryImages.forEach(img => {
     img.addEventListener('error', function () {
         // Create a placeholder gradient background
         const parent = this.parentElement;
-        parent.style.background = 'linear-gradient(135deg, #add8e6 0%, #1c75daa5 100%)';
+        parent.style.background = 'linear-gradient(135deg, #02040F 0%, #3F37C9 100%)';
         parent.style.display = 'flex';
         parent.style.alignItems = 'center';
         parent.style.justifyContent = 'center';
