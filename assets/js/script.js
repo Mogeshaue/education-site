@@ -182,6 +182,39 @@ window.addEventListener('scroll', () => {
 });
 
 // ===================================
+// HERO BACKGROUND CAROUSEL
+// ===================================
+
+const heroBg = document.querySelector('.hero-bg');
+if (heroBg) {
+    const heroImages = [
+        'https://images.unsplash.com/photo-1588072432836-e10032774350?w=1600&auto=format&fit=crop&q=80',
+        'https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?w=1600&auto=format&fit=crop&q=80',
+        'https://images.unsplash.com/photo-1523580845712-de8231e40fff?w=1600&auto=format&fit=crop&q=80'
+    ];
+    let heroIndex = 0;
+
+    const setHeroImage = (index) => {
+        heroBg.style.opacity = 0;
+        setTimeout(() => {
+            heroBg.style.backgroundImage = `url(${heroImages[index]})`;
+            heroBg.style.transform = 'scale(1.02)';
+            requestAnimationFrame(() => {
+                heroBg.style.opacity = 0.45;
+                heroBg.style.transform = 'scale(1)';
+            });
+        }, 300);
+    };
+
+    setHeroImage(heroIndex);
+
+    setInterval(() => {
+        heroIndex = (heroIndex + 1) % heroImages.length;
+        setHeroImage(heroIndex);
+    }, 6000);
+}
+
+// ===================================
 // CONTACT FORM HANDLING
 // ===================================
 

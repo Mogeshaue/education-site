@@ -4,147 +4,206 @@
 
 const toppersData = [
     {
-        name: "Abinaya S",
-        score: "Centum",
-        subject: "Mathematics",
-        year: "2024",
-        image: "assets/images/students.jpg",
-        headline: "District Rank 1",
-        testimonial: "Achieving a centum in Maths was my dream. The conceptual teaching here made it possible.",
+        name: "S. Anirudh Karthi",
+        score: "520/600",
+        subject: "Maths 99, Physics 81, Chemistry 88",
+        year: "2024-2025",
+        image: "assets/images/students-img/anirudh.jpg",
+        headline: "12th Std",
+        testimonial: "Suguna V PIP Mat Hr Sec School",
         video: null
     },
     {
-        name: "Barath Kumar",
-        score: "Centum",
-        subject: "Science",
-        year: "2024",
-        image: "assets/images/library.jpg",
-        headline: "School Topper",
-        testimonial: "The practical approach to Science helped me score full marks without rote memorization.",
-        video: true
-    },
-    {
-        name: "Charan J",
-        score: "Centum",
-        subject: "Mathematics",
-        year: "2024",
-        image: "assets/images/classroom.jpg",
-        headline: "Maths Whiz",
-        testimonial: "Consistent practice tests helped me eliminate silly mistakes and score 100/100.",
+        name: "K. Madhushree",
+        score: "523/600",
+        subject: "Maths 96, Physics 73, Chemistry 88",
+        year: "2024-2025",
+        image: "assets/images/students-img/madhushree.jpg",
+        headline: "12th Std",
+        testimonial: "Vimal Jyothi Convent Mat Hr Sec School, Saravanampatti",
         video: null
     },
     {
-        name: "Deepa M",
-        score: "Centum",
-        subject: "Social Science",
-        year: "2023",
-        image: "assets/images/lab.jpg",
-        headline: "State Rank 5",
-        testimonial: "Detailed notes and map work practice sessions were the key to my full marks in Social.",
+        name: "Harshini A",
+        score: "550/600",
+        subject: "Maths 96, Physics 90, Chemistry 85",
+        year: "2024-2025",
+        image: "assets/images/logo.png",
+        headline: "12th Std",
+        testimonial: "Vidya Vikasini Mat Hr Sec School, Thudiyalur",
         video: null
     },
     {
-        name: "Eswar P",
-        score: "Centum",
-        subject: "Physics",
-        year: "2023",
-        image: "assets/images/students.jpg",
-        headline: "Subject Topper",
-        testimonial: "Physics problems became easy to solve after attending the special problem-solving sessions.",
+        name: "Vijayaprasanna M",
+        score: "490/600",
+        subject: "Maths 95, Physics 79, Chemistry 71",
+        year: "2024-2025",
+        image: "assets/images/students-img/vijayaprasanna.jpg",
+        headline: "12th Std",
+        testimonial: "Sri Ramakrishna Mat Hr Sec School, Vattamalaipalayam",
         video: null
     },
     {
-        name: "Fathima Z",
-        score: "Centum",
-        subject: "Chemistry",
-        year: "2023",
-        image: "assets/images/library.jpg",
-        headline: "Chemistry Expert",
-        testimonial: "Understanding the reactions and equations deeply helped me secure a centum in Chemistry.",
+        name: "Nishalini G.S",
+        score: "541/600",
+        subject: "Maths 94, Physics 82, Chemistry 94",
+        year: "2024-2025",
+        image: "assets/images/students-img/nishalini.jpg",
+        headline: "12th Std",
+        testimonial: "G.D. Mat Hr Sec School",
         video: null
     },
     {
-        name: "Gokul R",
-        score: "Centum",
-        subject: "Mathematics",
-        year: "2022",
-        image: "assets/images/classroom.jpg",
-        headline: "Maths Genius",
-        testimonial: "Speed and accuracy training gave me the edge to complete the paper on time with full marks.",
+        name: "Nila H",
+        score: "553/600",
+        subject: "Maths 92, Physics 94, Chemistry 90",
+        year: "2024-2025",
+        image: "assets/images/students-img/nila.jpg",
+        headline: "12th Std",
+        testimonial: "Vidya Vikasini Mat Hr Sec School, Thudiyalur",
         video: null
     },
     {
-        name: "Harini V",
-        score: "Centum",
-        subject: "Computers",
-        year: "2022",
-        image: "assets/images/lab.jpg",
-        headline: "Comp Sci Topper",
-        testimonial: "The coding logic was taught so clearly that I scored full marks in Computer Science.",
+        name: "Jason B",
+        score: "543/600",
+        subject: "Maths 92, Physics 96, Chemistry 92",
+        year: "2024-2025",
+        image: "assets/images/students-img/jason.jpg",
+        headline: "12th Std",
+        testimonial: "SES Matric Hr Sec School",
         video: null
     },
     {
-        name: "Ishwarya K",
-        score: "Centum",
-        subject: "Accounts",
-        year: "2022",
-        image: "assets/images/students.jpg",
-        headline: "Commerce Star",
-        testimonial: "Accounts balance sheet techniques taught here are unique and very effective.",
+        name: "Shalom Biyona A",
+        score: "508/600",
+        subject: "Maths 90, Physics 76, Chemistry 87",
+        year: "2024-2025",
+        image: "assets/images/students-img/shalom.jpg",
+        headline: "12th Std",
+        testimonial: "St. Joseph Matric Hr Sec School",
         video: null
     },
     {
-        name: "Janani T",
-        score: "Centum",
-        subject: "Mathematics",
-        year: "2021",
-        image: "assets/images/library.jpg",
-        headline: "Consistent 100",
-        testimonial: "Scoring 100 in all internal tests gave me the confidence for the board exam.",
+        name: "Maheswari J",
+        score: "473/600",
+        subject: "Maths 90, Physics 78, Chemistry 73",
+        year: "2024-2025",
+        image: "assets/images/students-img/maheswari.jpg",
+        headline: "12th Std",
+        testimonial: "Kikani Matric Hr Sec School",
         video: null
     },
     {
-        name: "Karthik Raja",
-        score: "Centum",
-        subject: "Biology",
-        year: "2021",
-        image: "assets/images/classroom.jpg",
-        headline: "Bio Champ",
-        testimonial: "Diagram practice and keyword highlighting tips helped me bag a centum in Biology.",
+        name: "A.J. Vikrant",
+        score: "389/500",
+        subject: "Chemistry 93/100",
+        year: "2024-2025",
+        image: "assets/images/students-img/vikrant.jpg",
+        headline: "12th Std CBSE",
+        testimonial: "Sri Chaitanya Techno School",
         video: null
     },
     {
-        name: "Lakshmi N",
-        score: "Centum",
-        subject: "Business Maths",
-        year: "2020",
-        image: "assets/images/lab.jpg",
-        headline: "BM Topper",
-        testimonial: "Business Maths was tough initially, but the faculty made it my favorite subject.",
+        name: "Darshana S.R",
+        score: "514/600",
+        subject: "Maths 87, Physics 84, Chemistry 84",
+        year: "2024-2025",
+        image: "assets/images/students-img/image.png",
+        headline: "12th Std",
+        testimonial: "Bharatiya Vidya Bhavan (BVB RS Puram)",
         video: null
     },
     {
-        name: "Mohan S",
-        score: "Centum",
-        subject: "Mathematics",
-        year: "2020",
-        image: "assets/images/students.jpg",
-        headline: "Rank Holder",
-        testimonial: "I owe my engineering seat to the cut-off boost I got from my Maths centum.",
+        name: "Gowtham S.T",
+        score: "489/600",
+        subject: "Maths 86, Physics 85, Chemistry 75",
+        year: "2024-2025",
+        image: "assets/images/students-img/image copy.png",
+        headline: "12th Std",
+        testimonial: "G.D. Mat Hr Sec School",
         video: null
     },
     {
-        name: "Nithya P",
-        score: "Centum",
-        subject: "Economics",
-        year: "2019",
-        image: "assets/images/library.jpg",
-        headline: "Eco Topper",
-        testimonial: "Understanding economic concepts with real-world examples made learning easy.",
+        name: "Sadhana N",
+        score: "470/500",
+        subject: "Maths 96, Science 96",
+        year: "2024-2025",
+        image: "assets/images/students-img/image copy 2.png",
+        headline: "10th Std",
+        testimonial: "CMS Matric Hr Sec School",
+        video: null
+    },
+    {
+        name: "Karthika R",
+        score: "471/500",
+        subject: "Maths 94, Science 93",
+        year: "2024-2025",
+        image: "assets/images/students-img/image copy 3.png",
+        headline: "10th Std",
+        testimonial: "SES Matric Hr Sec School",
+        video: null
+    },
+    {
+        name: "Dharanish A",
+        score: "418/500",
+        subject: "Maths 93, Science 80",
+        year: "2024-2025",
+        image: "assets/images/students-img/image copy 4.png",
+        headline: "10th Std",
+        testimonial: "CNS Matric Hr Sec School",
+        video: null
+    },
+    {
+        name: "Sangamithra B",
+        score: "462/500",
+        subject: "Maths 92, Science 88",
+        year: "2024-2025",
+        image: "assets/images/students-img/image copy 5.png",
+        headline: "10th Std",
+        testimonial: "Avila Convent Mat Hr Sec School",
+        video: null
+    },
+    {
+        name: "Sudarsan S",
+        score: "420/500",
+        subject: "Maths 92, Science 90",
+        year: "2024-2025",
+        image: "assets/images/students-img/image copy 6.png",
+        headline: "10th Std",
+        testimonial: "Vidya Vikasini Mat Hr Sec School, Thudiyalur",
+        video: null
+    },
+    {
+        name: "Keerthi Harshini M.K",
+        score: "420/500",
+        subject: "Maths 85, Science 81",
+        year: "2024-2025",
+        image: "assets/images/students-img/image copy 7.png",
+        headline: "10th Std",
+        testimonial: "G.D. Mat Hr Sec School",
+        video: null
+    },
+    {
+        name: "Vikash V",
+        score: "94/100",
+        subject: "Maths 94",
+        year: "2024-2025",
+        image: "assets/images/students-img/image copy 8.png",
+        headline: "10th Std",
+        testimonial: "GHSS School, Ganapathy",
+        video: null
+    },
+    {
+        name: "Sharon Antony A",
+        score: "532/600",
+        subject: "Maths 91",
+        year: "2024-2025",
+        image: "assets/images/students-img/image copy 9.png",
+        headline: "10th Std CBSE",
+        testimonial: "The Camford INTL School",
         video: null
     }
 ];
-
 // Initialize
 function initializeMarquee() {
     try {
@@ -191,38 +250,66 @@ function appendCardsToRow(container, data) {
 }
 
 // Create Card HTML
+// Create Card HTML - Redesigned Sapphire Card (Reference Based)
 function createTopperCard(data) {
     const card = document.createElement('div');
-    card.className = 'success-card';
-    if (data.video) card.classList.add('has-video');
+    card.className = 'topper-card-sapphire';
 
-    const playButtonHTML = data.video ?
-        `<div class="play-icon"><i class="fas fa-play"></i></div>` : '';
+    // 1. Avatar Logic
+    const imgHTML = data.image ?
+        `<img src="${data.image}" alt="${data.name}" class="sapphire-avatar-img" onerror="this.src='https://via.placeholder.com/65/1e3a8a/ffffff?text=Student'">` :
+        `<div style="width:100%;height:100%;background:#e2e8f0;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#64748b;font-size:1.5rem;"><i class="fas fa-user"></i></div>`;
 
-    // Truncate testimonial
-    const maxChars = 80;
-    const isLong = data.testimonial.length > maxChars;
-    const displayText = isLong ? data.testimonial.substring(0, maxChars) + "..." : data.testimonial;
-    const readMoreHTML = isLong ? `<span class="read-more-link" onclick="toggleReadMore(this, '${data.testimonial.replace(/'/g, "\\'")}')">Read more</span>` : '';
+    // 2. Parse Subject String (e.g., "Maths 86, Physics 85, Chemistry 75")
+    let subjectsHTML = '';
+    if (data.subject) {
+        const subjectsArr = data.subject.split(',');
+        subjectsArr.forEach(subStr => {
+            const parts = subStr.trim().split(' ');
+            const mark = parts.pop(); // Last part is usually the mark
+            const name = parts.join(' '); // Rest is subject name
+            subjectsHTML += `
+                <div class="subject-row">
+                    <span class="subj-name">${name}</span>
+                    <span class="subj-mark">${mark}</span>
+                </div>
+            `;
+        });
+    }
 
+    // 3. Score Split
+    const [scoreVal, scoreMax] = data.score.includes('/') ? data.score.split('/') : [data.score, ''];
+
+    // 4. Build HTML
     card.innerHTML = `
-        <div class="card-header">
-            <div class="card-avatar">
-                <img src="${data.image}" alt="${data.name}">
-                ${playButtonHTML}
+        <div class="sapphire-header">
+            <div class="sapphire-avatar-box">
+                ${imgHTML}
             </div>
-            <div class="card-identity">
-                <h4 class="card-name">${data.name}</h4>
-                <div class="card-role-highlight">${data.headline}</div>
+            <div class="sapphire-info">
+                <h4>${data.name}</h4>
+                <div class="sapphire-badges">
+                    <span class="badge-pill-blur">${data.headline}</span>
+                    <span class="year-text">${data.year}</span>
+                </div>
             </div>
         </div>
-        
-         <div class="card-score-box">
-            <span class="score-badge">${data.score}</span>
-            <span class="score-details">${data.subject}</span>
+
+        <div class="sapphire-score-box">
+            <span class="score-label">Total Score</span>
+            <div class="big-score">${scoreVal}<span>/${scoreMax}</span></div>
         </div>
-        
-        <p class="card-testimonial">"${displayText}"${readMoreHTML}</p>
+
+        <div class="sapphire-divider"></div>
+
+        <div class="sapphire-subjects">
+            ${subjectsHTML}
+        </div>
+
+        <div class="sapphire-footer">
+            <div class="school-name">${data.testimonial}</div>
+             <span class="footer-badge">Academic Excellence</span>
+        </div>
     `;
 
     return card;
