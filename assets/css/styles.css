@@ -2471,6 +2471,8 @@ button {
 /* Elite Typography */
 .mentor-text {
     flex: 1;
+    position: relative;
+    z-index: 5;
 }
 
 .mentor-text h2 {
@@ -2585,27 +2587,16 @@ button {
 }
 
 .hero-image {
-    max-width: 110%;
-    /* Slightly larger to break container bounds if needed */
+    width: 135%;
+    max-width: 150%;
     height: auto;
     position: relative;
     z-index: 2;
-    /* Soft, realistic drop shadow for the cut-out */
     filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.15));
-    animation: floatImage 8s ease-in-out infinite;
-    transform-origin: center center;
-}
-
-@keyframes floatImage {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-15px);
-    }
+    /* Animation removed as requested */
+    transform-origin: center bottom;
+    margin-bottom: -10px;
+    /* Slight overlap to ensure no gap */
 }
 
 /* Background 3D Text - Elite Style */
@@ -2617,14 +2608,15 @@ button {
     font-size: 12rem;
     /* Massive */
     font-weight: 900;
-    color: #f8fafc;
-    /* Extremely subtle */
+    color: rgba(134, 178, 221, 0.2);
+    /* Extremely subtle - Reduced opacity for better merging */
     z-index: 1;
     white-space: nowrap;
     user-select: none;
     line-height: 0;
     font-family: var(--font-heading);
     letter-spacing: -0.05em;
+    mix-blend-mode: multiply;
 }
 
 /* Remove glow for the elite clean look */

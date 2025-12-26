@@ -144,7 +144,7 @@ const animateCounter = (element) => {
         if (progress < 1) {
             requestAnimationFrame(updateCounter);
         } else {
-            element.textContent = target;
+            element.textContent = target + "+";
         }
     };
 
@@ -289,8 +289,8 @@ contactForm.addEventListener('submit', async (e) => {
         // 1. Service ID: Create a service (e.g., Gmail) in EmailJS
         // 2. Template ID: Create an email template in EmailJS
         // 3. Public Key: Set this in index.html (emailjs.init)
-        const serviceID = 'service_b1k9x1s';
-        const templateID = 'template_ove6v9i';
+        const serviceID = 'service_d1l9554';
+        const templateID = 'template_7h29d2k';
 
         // emailjs.sendForm automatically captures all form fields with 'name' attributes
         await emailjs.sendForm(serviceID, templateID, contactForm);
@@ -362,7 +362,7 @@ if (logoImg) {
 const currentYear = new Date().getFullYear();
 const footerBottom = document.querySelector('.footer-bottom p');
 if (footerBottom) {
-    footerBottom.innerHTML = `&copy; ${currentYear} Excellence Tuition Center. All rights reserved.`;
+    footerBottom.innerHTML = `&copy; ${currentYear} RAM Tuition Center. All rights reserved.`;
 }
 
 // ===================================
@@ -411,5 +411,3 @@ formFields.forEach(field => {
     });
 });
 
-console.log('🎓 Excellence Tuition Center Website Loaded Successfully!');
-console.log('📧 Note: Email service integration pending. Form data will be logged to console.');
