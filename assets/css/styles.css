@@ -1833,8 +1833,8 @@ button {
         right: 0;
     }
 
-    .nav-link {
-        color: var(--text-dark);
+    .navbar .nav-link {
+        color: var(--text-dark) !important;
         font-size: 1.2rem;
         padding: 0.75rem 0;
         width: 100%;
