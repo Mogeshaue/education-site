@@ -9,7 +9,6 @@ education-site/
 │   │   ├── styles.css
 │   │   └── toppers-scroll.css
 │   ├── images/
-│   │   ├── Screenshot_2025-12-22_232336-removebg-preview.png
 │   │   ├── classroom.jpg
 │   │   ├── lab.jpg
 │   │   ├── library.jpg

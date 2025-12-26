@@ -8,7 +8,7 @@ const toppersData = [
         score: "520/600",
         subject: "Maths 99, Physics 81, Chemistry 88",
         year: "2024-2025",
-        image: "assets/images/students-img/anirudh.jpg",
+        image: "assets/images/students-img/anirudh.webp",
         headline: "12th Std",
         testimonial: "Suguna V PIP Mat Hr Sec School",
         video: null
@@ -18,7 +18,7 @@ const toppersData = [
         score: "523/600",
         subject: "Maths 96, Physics 73, Chemistry 88",
         year: "2024-2025",
-        image: "assets/images/students-img/madhushree.jpg",
+        image: "assets/images/students-img/madhushree.webp",
         headline: "12th Std",
         testimonial: "Vimal Jyothi Convent Mat Hr Sec School, Saravanampatti",
         video: null
@@ -38,7 +38,7 @@ const toppersData = [
         score: "490/600",
         subject: "Maths 95, Physics 79, Chemistry 71",
         year: "2024-2025",
-        image: "assets/images/students-img/vijayaprasanna.jpg",
+        image: "assets/images/students-img/vijayaprasanna.webp",
         headline: "12th Std",
         testimonial: "Sri Ramakrishna Mat Hr Sec School, Vattamalaipalayam",
         video: null
@@ -48,7 +48,7 @@ const toppersData = [
         score: "541/600",
         subject: "Maths 94, Physics 82, Chemistry 94",
         year: "2024-2025",
-        image: "assets/images/students-img/nishalini.jpg",
+        image: "assets/images/students-img/nishalini.webp",
         headline: "12th Std",
         testimonial: "G.D. Mat Hr Sec School",
         video: null
@@ -58,7 +58,7 @@ const toppersData = [
         score: "553/600",
         subject: "Maths 92, Physics 94, Chemistry 90",
         year: "2024-2025",
-        image: "assets/images/students-img/nila.jpg",
+        image: "assets/images/logo.png",
         headline: "12th Std",
         testimonial: "Vidya Vikasini Mat Hr Sec School, Thudiyalur",
         video: null
@@ -68,7 +68,7 @@ const toppersData = [
         score: "543/600",
         subject: "Maths 92, Physics 96, Chemistry 92",
         year: "2024-2025",
-        image: "assets/images/students-img/jason.jpg",
+        image: "assets/images/students-img/jason.webp",
         headline: "12th Std",
         testimonial: "SES Matric Hr Sec School",
         video: null
@@ -78,7 +78,7 @@ const toppersData = [
         score: "508/600",
         subject: "Maths 90, Physics 76, Chemistry 87",
         year: "2024-2025",
-        image: "assets/images/students-img/shalom.jpg",
+        image: "assets/images/students-img/shalom.webp",
         headline: "12th Std",
         testimonial: "St. Joseph Matric Hr Sec School",
         video: null
@@ -88,7 +88,7 @@ const toppersData = [
         score: "473/600",
         subject: "Maths 90, Physics 78, Chemistry 73",
         year: "2024-2025",
-        image: "assets/images/students-img/maheswari.jpg",
+        image: "assets/images/students-img/maheswari.webp",
         headline: "12th Std",
         testimonial: "Kikani Matric Hr Sec School",
         video: null
@@ -98,7 +98,7 @@ const toppersData = [
         score: "389/500",
         subject: "Chemistry 93/100",
         year: "2024-2025",
-        image: "assets/images/students-img/vikrant.jpg",
+        image: "assets/images/students-img/vikrant.webp",
         headline: "12th Std CBSE",
         testimonial: "Sri Chaitanya Techno School",
         video: null
@@ -108,7 +108,7 @@ const toppersData = [
         score: "514/600",
         subject: "Maths 87, Physics 84, Chemistry 84",
         year: "2024-2025",
-        image: "assets/images/students-img/image.png",
+        image: "assets/images/students-img/image.webp",
         headline: "12th Std",
         testimonial: "Bharatiya Vidya Bhavan (BVB RS Puram)",
         video: null
@@ -118,7 +118,7 @@ const toppersData = [
         score: "489/600",
         subject: "Maths 86, Physics 85, Chemistry 75",
         year: "2024-2025",
-        image: "assets/images/students-img/image copy.png",
+        image: "assets/images/students-img/image copy.webp",
         headline: "12th Std",
         testimonial: "G.D. Mat Hr Sec School",
         video: null
@@ -128,7 +128,7 @@ const toppersData = [
         score: "470/500",
         subject: "Maths 96, Science 96",
         year: "2024-2025",
-        image: "assets/images/students-img/image copy 2.png",
+        image: "assets/images/students-img/image copy 2.webp",
         headline: "10th Std",
         testimonial: "CMS Matric Hr Sec School",
         video: null
@@ -138,7 +138,7 @@ const toppersData = [
         score: "471/500",
         subject: "Maths 94, Science 93",
         year: "2024-2025",
-        image: "assets/images/students-img/image copy 3.png",
+        image: "assets/images/students-img/image copy 3.webp",
         headline: "10th Std",
         testimonial: "SES Matric Hr Sec School",
         video: null
@@ -148,7 +148,7 @@ const toppersData = [
         score: "418/500",
         subject: "Maths 93, Science 80",
         year: "2024-2025",
-        image: "assets/images/students-img/image copy 4.png",
+        image: "assets/images/students-img/image copy 4.webp",
         headline: "10th Std",
         testimonial: "CNS Matric Hr Sec School",
         video: null
@@ -158,7 +158,7 @@ const toppersData = [
         score: "462/500",
         subject: "Maths 92, Science 88",
         year: "2024-2025",
-        image: "assets/images/students-img/image copy 5.png",
+        image: "assets/images/students-img/image copy 5.webp",
         headline: "10th Std",
         testimonial: "Avila Convent Mat Hr Sec School",
         video: null
@@ -168,7 +168,7 @@ const toppersData = [
         score: "420/500",
         subject: "Maths 92, Science 90",
         year: "2024-2025",
-        image: "assets/images/students-img/image copy 6.png",
+        image: "assets/images/students-img/image copy 6.webp",
         headline: "10th Std",
         testimonial: "Vidya Vikasini Mat Hr Sec School, Thudiyalur",
         video: null
@@ -178,7 +178,7 @@ const toppersData = [
         score: "420/500",
         subject: "Maths 85, Science 81",
         year: "2024-2025",
-        image: "assets/images/students-img/image copy 7.png",
+        image: "assets/images/students-img/image copy 7.webp",
         headline: "10th Std",
         testimonial: "G.D. Mat Hr Sec School",
         video: null
@@ -188,7 +188,7 @@ const toppersData = [
         score: "94/100",
         subject: "Maths 94",
         year: "2024-2025",
-        image: "assets/images/students-img/image copy 8.png",
+        image: "assets/images/students-img/image copy 8.webp",
         headline: "10th Std",
         testimonial: "GHSS School, Ganapathy",
         video: null
@@ -198,7 +198,7 @@ const toppersData = [
         score: "532/600",
         subject: "Maths 91",
         year: "2024-2025",
-        image: "assets/images/students-img/image copy 9.png",
+        image: "assets/images/students-img/image copy 9.webp",
         headline: "10th Std CBSE",
         testimonial: "The Camford INTL School",
         video: null

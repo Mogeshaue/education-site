@@ -1820,12 +1820,13 @@ button {
         height: 100vh;
         width: 70%;
         max-width: 300px;
-        background: var(--bg-white);
+        background: #ffffff;
         flex-direction: column;
         padding: 5rem 2rem;
         box-shadow: var(--shadow-lg);
         transition: right var(--transition-normal);
         align-items: flex-start;
+        z-index: 9999;
     }
 
     .nav-menu.active {
