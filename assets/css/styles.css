@@ -156,6 +156,56 @@ button {
     margin-right: auto;
 }
 
+/* Local SEO Spotlight */
+.local-seo {
+    padding: var(--spacing-xl) 0;
+}
+
+.local-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.local-card {
+    background: var(--bg-white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.local-card h3 {
+    font-family: var(--font-heading);
+    margin-bottom: var(--spacing-sm);
+}
+
+.local-card ul {
+    list-style: disc;
+    padding-left: 1.2rem;
+    color: var(--text-gray);
+    line-height: 1.7;
+}
+
+.local-card p {
+    color: var(--text-gray);
+    margin-bottom: var(--spacing-sm);
+}
+
+.local-cta-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-top: var(--spacing-sm);
+}
+
+.local-cta-links a {
+    color: var(--primary-dark);
+    font-weight: 600;
+    text-decoration: underline;
+}
+
 /* Button Styles */
 .btn {
     display: inline-block;
