@@ -289,8 +289,8 @@ contactForm.addEventListener('submit', async (e) => {
         // 1. Service ID: Create a service (e.g., Gmail) in EmailJS
         // 2. Template ID: Create an email template in EmailJS
         // 3. Public Key: Set this in index.html (emailjs.init)
-        const serviceID = 'service_d1l9554';
-        const templateID = 'template_7h29d2k';
+        const serviceID = 'service_ga20vg8';
+        const templateID = 'template_f5b63cl';
 
         // emailjs.sendForm automatically captures all form fields with 'name' attributes
         await emailjs.sendForm(serviceID, templateID, contactForm);
