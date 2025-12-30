@@ -58,7 +58,7 @@ const toppersData = [
         score: "553/600",
         subject: "Maths 92, Physics 94, Chemistry 90",
         year: "2024-2025",
-        image: "assets/images/logo.png",
+        image: "assets/images/logo.webp",
         headline: "12th Std",
         testimonial: "Vidya Vikasini Mat Hr Sec School, Thudiyalur",
         video: null
@@ -257,8 +257,10 @@ function createTopperCard(data) {
 
     // 1. Avatar Logic
     const imgHTML = data.image ?
-        `<img src="${data.image}" alt="${data.name}" class="sapphire-avatar-img" onerror="this.src='https://via.placeholder.com/65/1e3a8a/ffffff?text=Student'">` :
+        `<img src="${data.image}" alt="${data.name}" class="sapphire-avatar-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">` :
         `<div style="width:100%;height:100%;background:#e2e8f0;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#64748b;font-size:1.5rem;"><i class="fas fa-user"></i></div>`;
+    
+    const fallbackHTML = `<div style="width:100%;height:100%;background:#e2e8f0;border-radius:50%;display:none;align-items:center;justify-content:center;color:#64748b;font-size:1.5rem;"><i class="fas fa-user"></i></div>`;
 
     // 2. Parse Subject String (e.g., "Maths 86, Physics 85, Chemistry 75")
     let subjectsHTML = '';
@@ -285,6 +287,7 @@ function createTopperCard(data) {
         <div class="sapphire-header">
             <div class="sapphire-avatar-box">
                 ${imgHTML}
+                ${fallbackHTML}
             </div>
             <div class="sapphire-info">
                 <h4>${data.name}</h4>
