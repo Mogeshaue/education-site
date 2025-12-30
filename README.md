@@ -12,7 +12,7 @@ education-site/
 │   │   ├── classroom.jpg
 │   │   ├── lab.jpg
 │   │   ├── library.jpg
-│   │   ├── logo.png
+│   │   ├── logo.webp
 │   │   ├── ramtutioncentre.png
 │   │   └── students.jpg
 │   └── js/

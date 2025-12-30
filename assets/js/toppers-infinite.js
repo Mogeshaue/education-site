@@ -28,7 +28,7 @@ const toppersData = [
         score: "550/600",
         subject: "Maths 96, Physics 90, Chemistry 85",
         year: "2024-2025",
-        image: "assets/images/logo.png",
+        image: "assets/images/logo.webp",
         headline: "12th Std",
         testimonial: "Vidya Vikasini Mat Hr Sec School, Thudiyalur",
         video: null
